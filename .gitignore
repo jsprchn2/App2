@@ -2,5 +2,4 @@ Debug/*
 ARM/*
 App1/Debug/*
 App1/ARM/*
-App1/Assets/*
-
+.vs/*

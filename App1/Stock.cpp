@@ -11,113 +11,110 @@ Stock::Stock()
 	volume = 0;
 	lastUpdated = "Never";
 }
-void Stock::UpdateStockInfo(std::string tickerName)
-{
-	name = tickerName;
-	std::string fileName;
-	std::string temp;
-	fileName = "daily_" + tickerName + ".csv";
-	std::ifstream inFile;
-	inFile.open(fileName);
 
-	if (!inFile)
-	{
-		std::cout << "Error opening file" << std::endl;
-	}
-	std::getline(inFile, temp);
+void Stock::UpdateStockInfo(Platform::String ^ tickerName)
+{
+	throw ref new Platform::NotImplementedException();
+}
 
-	std::getline(inFile, lastUpdated, ',');
-	std::getline(inFile, temp, ',');
-	openPrice = stof(temp);
-	std::getline(inFile, temp, ',');
-	highPrice = stof(temp);
-	std::getline(inFile, temp, ',');
-	lowPrice = stof(temp);
-	std::getline(inFile, temp, ',');
-	closePrice = stof(temp);
-	std::getline(inFile, temp, ',');
-	volume = stof(temp);
+void Stock::SetPurchaseQuantity(int32 quantity)
+{
+	throw ref new Platform::NotImplementedException();
+}
 
-	inFile.close();
-}
-void Stock::SetPurchaseQuantity(int quantity)
+void Stock::SetPurchasePrice(float32 price)
 {
-	purchaseQuantity = quantity;
+	throw ref new Platform::NotImplementedException();
 }
-void Stock::SetPurchasePrice(float price)
+
+Platform::String ^ Stock::GetName()
 {
-	purchasePrice = price;
+	throw ref new Platform::NotImplementedException();
+	// TODO: insert return statement here
 }
-std::string Stock::GetName()
-{
-	return name;
-}
-float Stock::GetOpenPrice()
+
+float32 Stock::GetOpenPrice()
 {
 	return openPrice;
 }
-float Stock::GetHighPrice()
+
+float32 Stock::GetHighPrice()
 {
 	return highPrice;
 }
-float Stock::GetLowPrice()
+
+float32 Stock::GetLowPrice()
 {
 	return lowPrice;
 }
-float Stock::GetClosePrice()
+
+float32 Stock::GetClosePrice()
 {
 	return closePrice;
 }
 
-double Stock::GetVolume()
+float64 Stock::GetVolume()
 {
 	return volume;
 }
-std::string Stock::GetLastUpdated()
+
+Platform::String ^ Stock::GetLastUpdated()
 {
-	return lastUpdated;
+	throw ref new Platform::NotImplementedException();
+	// TODO: insert return statement here
 }
-int Stock::GetPurchaseQuantity()
+
+int32 Stock::GetPurchaseQuantity()
 {
 	return purchaseQuantity;
 }
-float Stock::GetPurchasePrice()
+
+float32 Stock::GetPurchasePrice()
 {
 	return purchasePrice;
 }
+
 void Stock::PrintName()
 {
-	std::cout << name;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintOpenPrice()
 {
-	std::cout << openPrice;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintHighPrice()
 {
-	std::cout << highPrice;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintLowPrice()
 {
-	std::cout << lowPrice;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintClosePrice()
 {
-	std::cout << closePrice;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintVolume()
 {
-	std::cout << volume;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintLastUpdated()
 {
-	std::cout << lastUpdated;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintPurchaseQuantity()
 {
-	std::cout << purchaseQuantity;
+	throw ref new Platform::NotImplementedException();
 }
+
 void Stock::PrintPurchasePrice()
 {
-	std::cout << purchasePrice;
+	throw ref new Platform::NotImplementedException();
 }

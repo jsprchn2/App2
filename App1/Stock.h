@@ -2,22 +2,22 @@
 #include <iostream>
 #include <fstream>
 
-class Stock
+ref class Stock sealed
 {
 public:
-	Stock();
-	void UpdateStockInfo(std::string tickerName);
-	void SetPurchaseQuantity(int quantity);
-	void SetPurchasePrice(float price);
-	std::string GetName();
-	float GetOpenPrice();
-	float GetHighPrice();
-	float GetLowPrice();
-	float GetClosePrice();
-	double GetVolume();
-	std::string GetLastUpdated();
-	int GetPurchaseQuantity();
-	float GetPurchasePrice();
+	ref class Stock();
+	void UpdateStockInfo(Platform::String^ tickerName);
+	void SetPurchaseQuantity(int32 quantity);
+	void SetPurchasePrice(float32 price);
+	Platform::String^ GetName();
+	float32 GetOpenPrice();
+	float32 GetHighPrice();
+	float32 GetLowPrice();
+	float32 GetClosePrice();
+	float64 GetVolume();
+	Platform::String^ GetLastUpdated();
+	int32 GetPurchaseQuantity();
+	float32 GetPurchasePrice();
 	void PrintName();
 	void PrintOpenPrice();
 	void PrintHighPrice();
@@ -29,13 +29,13 @@ public:
 	void PrintPurchasePrice();
 
 private:
-	std::string name;
-	float openPrice;
-	float highPrice;
-	float lowPrice;
-	float closePrice;
-	double volume;
-	std::string lastUpdated;
-	int purchaseQuantity;
-	float purchasePrice;
+	Platform::String^ name;
+	float32 openPrice;
+	float32 highPrice;
+	float32 lowPrice;
+	float32 closePrice;
+	float64 volume;
+	Platform::String^ lastUpdated;
+	int32 purchaseQuantity;
+	float32 purchasePrice;
 };
