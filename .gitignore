@@ -2,6 +2,5 @@ Debug/*
 ARM/*
 App1/Debug/*
 App1/ARM/*
-App2/App1/Assets/*
-App2/App1/*
-App1/*
+App1/Assets/*
+
