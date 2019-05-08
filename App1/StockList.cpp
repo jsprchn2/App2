@@ -6,14 +6,14 @@ StockList::StockList()
 }
 
 
-void StockList::AddToList(std::string tickerName)
+void StockList::AddToList(Platform::String^ tickerName)
 {
 	Stock newStock;
 	newStock.UpdateStockInfo(tickerName);
 	list.insert(list.end(), newStock);
 }
 
-Stock StockList::SearchForName(std::string searchName)
+Stock StockList::SearchForName(Platform::String^ searchName)
 {
 	for (int i = 0; i < list.size(); i++)
 	{
@@ -27,7 +27,7 @@ Stock StockList::SearchForName(std::string searchName)
 	}
 }
 
-Stock StockList::OutputStock(int position)
+Stock StockList::OutputStock(int32 position)
 {
 	return list.at(position);
 }

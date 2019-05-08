@@ -1,13 +1,13 @@
-#include <StockList.h>
+#include "StockList.h""
 #include <vector>
 
-class StockPortfolio
+ref class StockPortfolio sealed
 {
 public:
-	StockPortfolio();
-	void AddToList(std::string tickerName, int quantity, float price);
-	Stock SearchForName(std::string searchName);
-	Stock OutputStock(int position);
+	ref class StockPortfolio();
+	void AddToList(Platform::String^ tickerName, int32 quantity, float32 price);
+	Stock SearchForName(Platform::String^ searchName);
+	Stock OutputStock(int32 position);
 
 private:
 	std::vector<Stock> list;

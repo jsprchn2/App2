@@ -6,7 +6,7 @@ StockPortfolio::StockPortfolio()
 }
 
 
-void StockPortfolio::AddToList(std::string tickerName, int quantity, float price)
+void StockPortfolio::AddToList(Platform::String^ tickerName, int32 quantity, float32 price)
 {
 	Stock newStock;
 	newStock.UpdateStockInfo(tickerName);
@@ -15,7 +15,7 @@ void StockPortfolio::AddToList(std::string tickerName, int quantity, float price
 	list.insert(list.end(), newStock);
 }
 
-Stock StockPortfolio::SearchForName(std::string searchName)
+Stock StockPortfolio::SearchForName(Platform::String^ searchName)
 {
 	for (int i = 0; i < list.size(); i++)
 	{
@@ -29,7 +29,7 @@ Stock StockPortfolio::SearchForName(std::string searchName)
 	}
 }
 
-Stock StockPortfolio::OutputStock(int position)
+Stock StockPortfolio::OutputStock(int32 position)
 {
 	return list.at(position);
 }
