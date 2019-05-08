@@ -1,6 +1,7 @@
-App2/Debug/*
-App2/ARM/*
-App2/App1/Debug/*
-App2/App1/ARM/*
+Debug/*
+ARM/*
+App1/Debug/*
+App1/ARM/*
 App2/App1/Assets/*
-
+App2/App1/*
+App1/*
