@@ -17,7 +17,7 @@ void StockPortfolio::AddToList(Platform::String^ tickerName, int32 quantity, flo
 
 Stock StockPortfolio::SearchForName(Platform::String^ searchName)
 {
-	for (int i = 0; i < list.size(); i++)
+	for (size_t i = 0; i < list.size(); i++)
 	{
 		if (searchName == list.at(i).GetName())
 		{

@@ -6,16 +6,16 @@ ref class Stock sealed
 {
 public:
 	ref class Stock();
-	void UpdateStockInfo(std::string tickerName);
+	void UpdateStockInfo(Platform::String^ tickerName);
 	void SetPurchaseQuantity(int32 quantity);
 	void SetPurchasePrice(float32 price);
-	std::string GetName();
+	Platform::String^ GetName();
 	float32 GetOpenPrice();
 	float32 GetHighPrice();
 	float32 GetLowPrice();
 	float32 GetClosePrice();
 	float64 GetVolume();
-	std::string GetLastUpdated();
+	Platform::String^ GetLastUpdated();
 	int32 GetPurchaseQuantity();
 	float32 GetPurchasePrice();
 	void PrintName();
@@ -29,13 +29,13 @@ public:
 	void PrintPurchasePrice();
 
 private:
-	std::string name;
+	Platform::String^ name;
 	float32 openPrice;
 	float32 highPrice;
 	float32 lowPrice;
 	float32 closePrice;
 	float64 volume;
-	std::string lastUpdated;
+	Platform::String^ lastUpdated;
 	int32 purchaseQuantity;
 	float32 purchasePrice;
 };

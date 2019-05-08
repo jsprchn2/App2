@@ -64,7 +64,7 @@ void App1::MainPage::Add_To_Portfolio_Button_Click(Platform::Object^ sender, Win
 
 void App1::MainPage::Back_Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-
+	StockList->Items->RemoveAtEnd();
 }
 
 void App1::MainPage::StockList_SelectionChanged_1(Platform::Object^ sender, Windows::UI::Xaml::Controls::SelectionChangedEventArgs^ e)

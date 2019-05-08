@@ -14,12 +14,13 @@ Stock::Stock()
 	lastUpdated = "Never";
 }
 
-void Stock::UpdateStockInfo(std::string tickerName)
+void Stock::UpdateStockInfo(Platform::String^ tickerName)
 {
 	//throw ref new Platform::NotImplementedException();
-	std::string name = tickerName;
-	std::string fileName;
+	Platform::String^ name = tickerName;
+	Platform::String^ fileName;
 	std::string temp;
+	std::string value;
 	fileName = "daily_" + tickerName + ".csv";
 
 	Platform::String^ localFolder = Windows::Storage::ApplicationData::Current->LocalFolder->Path;
@@ -37,7 +38,19 @@ void Stock::UpdateStockInfo(std::string tickerName)
 	{
 		in >> fileData;
 		std::getline(in, temp);
-		std::getline(in, lastUpdated, ',');
+		value = lastUpdated->ToString;
+		std::getline(in, value , ',');
+		std::getline(in, temp, ',');
+		openPrice = stof(temp);
+		std::getline(in, temp, ',');
+		highPrice = stof(temp);
+		std::getline(in, temp, ',');
+		lowPrice = stof(temp);
+		std::getline(in, temp, ',');
+		closePrice = stof(temp);
+		std::getline(in, temp, ',');
+		volume = stof(temp);
+
 		in.close();
 	}
 }
@@ -54,7 +67,7 @@ void Stock::SetPurchasePrice(float32 price)
 	purchasePrice = price;
 }
 
-std::string Stock::GetName()
+Platform::String^ Stock::GetName()
 {
 	//throw ref new Platform::NotImplementedException();
 	// TODO: insert return statement here
@@ -86,7 +99,7 @@ float64 Stock::GetVolume()
 	return volume;
 }
 
-std::string Stock::GetLastUpdated()
+Platform::String^ Stock::GetLastUpdated()
 {
 	//throw ref new Platform::NotImplementedException();
 	// TODO: insert return statement here
@@ -106,7 +119,7 @@ float32 Stock::GetPurchasePrice()
 void Stock::PrintName()
 {
 	//throw ref new Platform::NotImplementedException();
-	std::cout << name;
+	std::cout << name->ToString;
 	
 }
 
@@ -143,7 +156,7 @@ void Stock::PrintVolume()
 void Stock::PrintLastUpdated()
 {
 	//throw ref new Platform::NotImplementedException();
-	std::cout << lastUpdated;
+	std::cout << lastUpdated->ToString;
 }
 
 void Stock::PrintPurchaseQuantity()
@@ -158,6 +171,6 @@ void Stock::PrintPurchasePrice()
 	std::wcout << purchasePrice;
 }
 
-public interface IPrintable {
-	void Print();
-};
+//public interface IPrintable {
+//	void Print();
+//};
