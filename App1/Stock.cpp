@@ -30,7 +30,7 @@ void Stock::UpdateStockInfo(Platform::String^ tickerName)
 	const char* charStr = folderNameA.c_str();
 	char file[512];
 
-	sprintf(file, "%s\\temp.txt", charStr);
+	sprintf_s(file, "%s\\temp.txt", charStr);
 	
 	char fileData[100];
 	ifstream in(file);
@@ -38,7 +38,7 @@ void Stock::UpdateStockInfo(Platform::String^ tickerName)
 	{
 		in >> fileData;
 		std::getline(in, temp);
-		value = lastUpdated->ToString;
+		value = &lastUpdated->ToString;
 		std::getline(in, value , ',');
 		std::getline(in, temp, ',');
 		openPrice = stof(temp);
@@ -119,7 +119,7 @@ float32 Stock::GetPurchasePrice()
 void Stock::PrintName()
 {
 	//throw ref new Platform::NotImplementedException();
-	std::cout << name->ToString;
+	std::cout << &name->ToString;
 	
 }
 
@@ -156,7 +156,7 @@ void Stock::PrintVolume()
 void Stock::PrintLastUpdated()
 {
 	//throw ref new Platform::NotImplementedException();
-	std::cout << lastUpdated->ToString;
+	std::cout << &lastUpdated->ToString;
 }
 
 void Stock::PrintPurchaseQuantity()
